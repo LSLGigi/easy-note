@@ -1,2 +1,0 @@
-webpackJsonp([0],{Tdvy:function(e,t){},jyJz:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var s={render:function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"user"},[t("div",{staticClass:"newNote"},[t("router-link",{attrs:{to:{name:"add"}}},[this._v("新增笔记")])],1)])},staticRenderFns:[]};var a=n("VU/8")({name:"User.vue"},s,!1,function(e){n("Tdvy")},"data-v-83b59a32",null);t.default=a.exports}});
-//# sourceMappingURL=0.36d1995317af1c6707b5.js.map
