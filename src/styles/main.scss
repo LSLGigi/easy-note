@@ -1,0 +1,236 @@
+@charset "UTF-8";
+$poa:absolute;$por:relative;$pof:fixed;$defaultColor:#02B2B5;$fontColor:#5a5a5a;
+/***
+**** base css ****
+***/
+.clearfix:after{zoom:1;content:".";display:block;height:0;clear:both;visibility:hidden}
+html{overflow-x:hidden;overflow-y:auto;}
+body{font-size:16px;background-color:#fff;font-family: "微软雅黑";margin: 0;padding: 0;
+     background: url(../assets/bg.jpg) top center;}
+a{text-decoration: none;
+	&:hover{text-decoration: none;color: $defaultColor;}
+}
+li{list-style: none;}
+#app {
+  text-align: center;
+  color: #2c3e50;
+}
+#nav {
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+// 区块大小
+@mixin size($width,$height){
+  width: $width;
+  height: $height;
+}
+//过渡
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+/***
+**** 登录注册页面样式****
+***/
+.form {
+  .title{
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c4156;
+    margin-bottom: 14px;
+    padding-left: 42px;
+  }
+  .inputInfo{
+    padding: 10px;
+    span{
+    display: inline-block;
+    width: 84px;
+    }
+    input{
+      text-indent: 6px;
+      outline: none;
+      border-radius: 4px;
+    }
+  }
+  .btn{ 
+    margin: 10px 0 0 84px;
+    button{
+    margin: 5px 10px;
+    width: 76px;
+    height: 28px;
+    background-color: #6fc2e2;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    }
+  }
+}
+/***
+**** 记事本页面样式****
+***/
+//头部header
+// .top{height: 62px;}
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 62px;
+    padding: 16px 100px;
+    line-height: 30px;
+    background-color: rgba(186, 203, 224, 0.7);
+    box-shadow: 2px -1px 2px #151313;
+  .left{
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .right{
+    float: right;
+    li{
+      display: inline-block;
+      padding: 0 14px;
+    }
+  }
+}
+//添加Add
+.addNote{
+  .title{
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c4156;
+    margin-bottom: 18px;
+  }
+  .addTitle{
+    margin-bottom: 16px;
+    span{}
+    input{
+      outline: none;
+      text-indent: 8px;
+    }
+  }
+  .addCont{
+    span{}
+    textarea{
+      outline: none;
+      padding: 6px;
+    }
+  }
+  .btn{ 
+    margin: 10px 0 0 84px;
+    button{
+    margin: 5px 10px;
+    width: 96px;
+    height: 38px;
+    background-color: #6fc2e2;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    }
+  }
+}
+//个人中心user
+.user{
+  padding-top: 100px;
+  .newNote{
+    margin: 30px auto;
+    padding-top: 100px;
+    letter-spacing: 8px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    background: #F4D03F;
+    -moz-animation: myfirst 10s infinite alternate;
+    -webkit-animation: myfirst 10s infinite alternate;
+    -o-animation: myfirst 10s infinite alternate;
+    animation: myfirst 10s infinite alternate;
+    a{
+      font-size: 34px;
+    }
+  }
+}
+@keyframes myfirst
+{
+    0%   {background:#F4D03F;}
+    25%  {background:#e6490d;}
+    50%  {background:#43A4CE;}
+    80% {background:#30B557;}
+}
+
+@-moz-keyframes myfirst
+{
+    0%   {background:#F4D03F;}
+    25%  {background:#e6490d;}
+    50%  {background:#43A4CE;}
+    80% {background:#30B557;}
+}
+
+@-webkit-keyframes myfirst
+{
+    0%   {background:#F4D03F;}
+    25%  {background:#e6490d;}
+    50%  {background:#43A4CE;}
+    80% {background:#30B557;}
+}
+
+@-o-keyframes myfirst
+{
+    0%   {background:#F4D03F;}
+    25%  {background:#e6490d;}
+    50%  {background:#43A4CE;}
+    80% {background:#30B557;}
+}
+//笔记列表list
+.itemList{
+  ul
+  {
+    margin-top: 34px;
+    li{
+      width: 94%;
+      padding-left: 50px;
+      padding-top: 28px;
+      .time{
+        float: left;
+        width: 8%;
+        height: 84px;
+        color: rgb(102, 102, 102);
+        background-color: #f2f2f2;
+        text-align: center;
+        padding-top: 30px;
+        font-weight: bold;
+      }
+      .noteCont{
+        float: right;
+        width: 90%;
+        .title{
+          .noteTitle{
+            // float: left;
+            font-weight: bold;
+          }
+          .detail{
+            color: #1d07d0;
+            padding-right: 30px;
+            &:hover{color: #2c4156;cursor: pointer;}
+          }
+          .delete{
+            color: #1d07d0;
+            &:hover{color: #2c4156;cursor: pointer;}
+          }
+        }
+        .cont{
+          text-align: left;
+        }
+      }
+    }
+  }
+}
